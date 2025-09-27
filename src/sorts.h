@@ -94,6 +94,10 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
         // we insert the key at its correct position which is j + 1
         array[j + 1] = key; 
 
+        // printing it
+        if (print == 1){
+            printIntArray(array, size);
+        }
     }
 }
 
