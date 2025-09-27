@@ -13,7 +13,7 @@
 // Output: The index in an array of the minimum value between a range [start,stop]
 int findMinimum(int *array, int start, int stop)
 {
-    // initialized start as the minimum index infering that the first element is the smallest
+    // initialized start as the minimum index infering that the first value is the smallest
     int minimum_index = start;
     // going through the array from start to stop to find the minimum value
     // starting from start + 1 up to stop - 1
@@ -44,11 +44,11 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
         // already sorted nothing to return
         return;
     }
-    // making the outer look to go through each element
+    // making the outer look to go through each value
     for (unsigned int i = 0; i < size - 1; i++){
         // finding the index of the minimum value in the unsorted part of the array
         int minimum_index = findMinimum(array, i, size);
-        // swapping the found minimum element with the first element of the unsorted part
+        // swapping the found minimum value with the first value of the unsorted part
         if (minimum_index != i){
             swap(&array[i], &array[minimum_index]);
         }
@@ -70,9 +70,31 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void insertionSortIntegers(int *array, unsigned int size, int print)
 {
-    // TODO: Implement insertion sort
- 
+    // check for null pointer or size less than or equal to 1 or else we don't have to sort anything
+    if (array == NULL || size <= 1){
+        // already sorted return nothing
+        return;
+    }
+    // making the outer look to go through each value
+    for (unsigned int i = 1; i < size; i++){
+        // current value being inserted into the sorted part
+        int key = array[i];
+        // starting from last index of the sorted part
+        int j = i - 1;
+        // moving values of the sorted part 
+        // shifting value that are greater than key position to the right
+        // order matters so we need to check j >= 0 first before geting array[j]
+        while (j >= 0 && array[j] > key){
+            // shifting the value to the right
+            array[j + 1] = array[j];
+            // moving to the next index to the left
+            j--;
+        }
+        // after shifting all the greater values to the right
+        // we insert the key at its correct position which is j + 1
+        array[j + 1] = key; 
 
+    }
 }
 
 /** Code for Bubble Sort (from Lab -if not compiling, comment out the internals, but leave the function definition) ***/
