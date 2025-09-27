@@ -13,7 +13,17 @@
 // Output: The index in an array of the minimum value between a range [start,stop]
 int findMinimum(int *array, int start, int stop)
 {
-    return 0; // modify to return the index of the min value
+    // initialized start as the minimum index infering that the first element is the smallest
+    int minimum_index = start;
+    // going through the array from start to stop to find the minimum value
+    // starting from start + 1 up to stop - 1
+    for (int i = start + 1; i < stop; i++){
+        // if we find a smaller value then we update the minimum index
+        if (array[i] < array[minimum_index]){
+            minimum_index = i;
+        }
+    }
+    return minimum_index; // modify to return the index of the min value
 }
 
 
@@ -29,8 +39,20 @@ int findMinimum(int *array, int start, int stop)
 //  -  'print' tells it to print out after each interation
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void selectionSortIntegers(int *array, unsigned int size, int print)
-{
-    // todo: implement selection sort
+{   // check for null pointer or size less than or equal to 1 or else we don't have to sort anything
+    if (array == NULL || size <= 1){
+        // already sorted nothing to return
+        return;
+    }
+    // making the outer look to go through each element
+    for (unsigned int i = 0; i < size - 1; i++){
+        // finding the index of the minimum value in the unsorted part of the array
+        int minimum_index = findMinimum(array, i, size);
+        // swapping the found minimum element with the first element of the unsorted part
+        if (minimum_index != i){
+            swap(&array[i], &array[minimum_index]);
+        }
+    }
 }
 
 /***  Code for Insertion Sort ***/
