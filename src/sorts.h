@@ -45,7 +45,7 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
         return;
     }
     // making the outer look to go through each value
-    for (unsigned int i = 0; i < size - 1; i++){
+    for (int i = 0; i < size - 1; i++){
         // finding the index of the minimum value in the unsorted part of the array
         int minimum_index = findMinimum(array, i, size);
         // swapping the found minimum value with the first value of the unsorted part
@@ -79,7 +79,7 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
         return;
     }
     // making the outer look to go through each value
-    for (unsigned int i = 1; i < size; i++){
+    for (int i = 1; i < size; i++){
         // current value being inserted into the sorted part
         int key = array[i];
         // starting from last index of the sorted part
@@ -119,8 +119,33 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 //           be modified to store a sorted array of size.
 void bubbleSortIntegers(int *array, unsigned int size, int print)
 {
-    // code generated from lab
-
+    // checking null and minimum size
+    if (array == NULL || size <= 1){
+        // already sorted nothing to return
+        return;
+    }
+    // going through each value
+    for (int i = 0; i < size - 1; i++){
+        // keeping track of swaps
+        int swapped = 0;
+        // checking each adjacent pair
+        for (int j = 0; j < size - i - 1; j++){
+            // checking if the current value is greater than the next value
+            if (array[j] > array[j + 1]){
+                // swapping the values if they are in the wrong order
+                swap(&array[j], &array[j + 1]);
+                swapped = 1; // set swapped to true as we made a swap
+            }
+        }
+        // print the array after each iteration of the outer loop
+        if (print == 1){
+            printIntArray(array, size);
+        }
+        // if we made no swaps then it is sorted so we break out of the loop
+        if (swapped == 0){
+            break;
+        }
+    }
 }
 
 // ** You will work on merge sort during the lab on Module 06 ** //
