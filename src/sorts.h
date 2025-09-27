@@ -52,6 +52,9 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
         if (minimum_index != i){
             swap(&array[i], &array[minimum_index]);
         }
+        if (print == 1){
+            printIntArray(array, size);
+        }
     }
 }
 
