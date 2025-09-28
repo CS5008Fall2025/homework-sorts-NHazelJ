@@ -8,13 +8,19 @@ You are free to write a script to run the program and build your table (then cop
  
 
 ### Table [^note]
-| N | Bubble | Selection | Insertion | Merge | Quick |
-| :-- | :--: | :--: | :--: | :--: | :--: |
-
-
-
-
-
+| N      | Bubble   | Selection | Insertion | Merge (module 6) | Quick (module 6) |  
+| 10     | 0.000001 | 0.000001 | 0.000000 | :--: | :--: |  
+| 50     | 0.000011 | 0.000005 | 0.000002  | :--: | :--: |  
+| 100    | 0.000026 | 0.000016 | 0.000008 | :--: | :--: |  
+| 250    | 0.000145 | 0.000081 | 0.000046 | :--: | :--: |  
+| 500    | 0.000556 | 0.000304 | 0.000213 | :--: | :--: |  
+| 1000   | 0.002155 | 0.001209 | 0.000665 | :--: | :--: |  
+| 2000   | 0.008741 | 0.004563 | 0.002528 | :--: | :--: |  
+| 5000   | 0.063351 | 0.028247 | 0.016018 | :--: | :--: |  
+| 10000  | 0.283265 | 0.112168 | 0.063926 | :--: | :--: |  
+| 20000  | 1.259489 | 0.452660 | 0.304080 | :--: | :--: |  
+| 50000  | 8.588222 | 3.006050 | 1.613781 | :--: | :--: |  
+| 100000 | 34.361687 | 11.871099 | 7.134020 | :--: | :--: |  
 
 
 ## BigO Analysis  / Questions
@@ -22,12 +28,12 @@ You are free to write a script to run the program and build your table (then cop
 ### 1. Build a line chart
 Build a line chart using your favorite program. Your X axis will be N increasing, and your Y access will be the numbers for each type of sort. This will create something similar to the graph in the instructions, though it won't be as smooth. Due to speed differences, you may need to break up the $O(\log n)$ and $O(n^2)$ into different charts.
 
-Include the image in your markdown. As a reminder, you save the image in your repo, and use [image markdown].
-
+![Sorting Algorithms Bubble Selection and Insertion](SortingAlgorithms.png)
 
 
 ### 2. Analysis
-Looking at the graph and the table, what can you say about the various sorts? Which are the fastest? Which are the slowest? Which are the most consistent? Which are the least consistent? Use this space to reflect in your own words your observations.
+Looking at the graph and the table, what can you say about the various sorts? Which are the fastest? Which are the slowest? Which are the most consistent? Which are the least consistent? Use this space to reflect in your own words your observations.  
+From both the table and the charts, the gap between the quadratic sorts widens quickly as N grows. Insertion sort is the fastest of the three in my runs, which matches its lower constant factors and the fact it shifts rather than swaps a lot. Bubble sort is the slowest overall and scales the worst, as expected for a comparison heavy O(n²) method with many swaps. Selection sort lands in the middle: it does a fixed pattern of scans and one swap per outer pass, so it’s usually slower than insertion for large N but much better than bubble. In terms of consistency, selection sort is the most stable across input shapes (its work is almost the same whether the data is sorted or not). Insertion and bubble are the least consistent, they can be much faster on nearly sorted arrays (insertion is O(n) and bubble can exit early), but degrade to full O(n²) on harder inputs. Overall, the plots show insertion as the practical winner among these three for moderate sizes, with selection steady but slower, and bubble clearly falling behind as N increases.
 
 
 ### 3. Big O

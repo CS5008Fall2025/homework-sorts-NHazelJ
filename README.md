@@ -14,5 +14,6 @@ Did you collaborate with any other students/TAs/Professors? If so, tell us who a
 
 
 Did you use any external resources (you do not have to cite in class material)? (Cite them below)  
-- one row per resource
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. Introduction to Algorithms (3rd ed.). MIT Press — Insertion sort analysis.
+
 

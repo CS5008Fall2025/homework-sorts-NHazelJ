@@ -20,6 +20,7 @@ int findMinimum(int *array, int start, int stop)
     for (int i = start + 1; i < stop; i++){
         // if we find a smaller value then we update the minimum index
         if (array[i] < array[minimum_index]){
+            // saving the index of the new minimum value
             minimum_index = i;
         }
     }
@@ -50,9 +51,12 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
         int minimum_index = findMinimum(array, i, size);
         // swapping the found minimum value with the first value of the unsorted part
         if (minimum_index != i){
+            // swapping only if the minimum index is not the current index
             swap(&array[i], &array[minimum_index]);
         }
+        // print the array after each iteration of the outer loop
         if (print == 1){
+            // call function to print the array
             printIntArray(array, size);
         }
     }
@@ -97,8 +101,9 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
         // we insert the key at its correct position which is j + 1
         array[j + 1] = key; 
 
-        // printing it
+        // print the array after each iteration of the outer loop
         if (print == 1){
+            // call function to print the array
             printIntArray(array, size);
         }
     }
@@ -134,11 +139,13 @@ void bubbleSortIntegers(int *array, unsigned int size, int print)
             if (array[j] > array[j + 1]){
                 // swapping the values if they are in the wrong order
                 swap(&array[j], &array[j + 1]);
-                swapped = 1; // set swapped to true as we made a swap
+                // set swapped to true as we made a swap
+                swapped = 1; 
             }
         }
         // print the array after each iteration of the outer loop
         if (print == 1){
+            // call function to print the array
             printIntArray(array, size);
         }
         // if we made no swaps then it is sorted so we break out of the loop
