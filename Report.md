@@ -9,6 +9,7 @@ You are free to write a script to run the program and build your table (then cop
 
 ### Table [^note]
 | N      | Bubble   | Selection | Insertion | Merge (module 6) | Quick (module 6) |  
+| :----------: | :---------: | :------------: | :-------: | :-------: |:-------:|   
 | 10     | 0.000001 | 0.000001 | 0.000000 | :--: | :--: |  
 | 50     | 0.000011 | 0.000005 | 0.000002  | :--: | :--: |  
 | 100    | 0.000026 | 0.000016 | 0.000008 | :--: | :--: |  
@@ -38,9 +39,10 @@ From both the table and the charts, the gap between the quadratic sorts widens q
 
 ### 3. Big O
 Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. [1],[2],[3]  
-| Algorithm    | Best Case   | Average Case   | Worst Case|  
+| Algorithm    | Best Case   | Average Case   | Worst Case|   
+| :----------: | :---------: | :------------: | :-------: |  
 | Bubble       | O(n)*       | O(n2)          | O(n2)     |  
-| Selection    | O(n2)       | O(n2)          | O(n2)    |  
+| Selection    | O(n2)       | O(n2)          | O(n2)     |  
 | Insertion    | O(n)        | O(n2)          | O(n2)     |  
 
 #### 3.2 Worst Case
@@ -137,14 +139,18 @@ Big-O notation describes an asymptotic upper bound on how a function—usually a
 ![27. Remove Element LeetCode Question](RemoveElement27LC.png)
 
 ## Deeper Thinking
-Sorting algorithms are still being studied today. They often include a statistical analysis of data before sorting. This next question will require some research, as it isn't included in class content. When you call `sort()` or `sorted()` in Python 3.6+, what sort is it using? 
+Sorting algorithms are still being studied today. They often include a statistical analysis of data before sorting. This next question will require some research, as it isn't included in class content. When you call `sort()` or `sorted()` in Python 3.6+, what sort is it using?  
+Both list.sort() and sorted() use Timsort, a stable, adaptive hybrid of merge sort and insertion sort that exploits already-sorted “runs” in the data. The official Sorting HOWTO explicitly describes Python’s sort as Timsort and notes that it benefits from existing order.[9][10]
 
 #### Visualize
-Find a graphic / visualization (can be a youtube video) that demonstrates the sort in action. 
+Find a graphic / visualization (can be a youtube video) that demonstrates the sort in action.  
+video - of Tim Sort - https://www.youtube.com/watch?v=NVIjHj-lrT4
 
 #### Big O
-Give the worst and best case time-complexity, and examples that would generate them. 
-
+Give the worst and best case time-complexity, and examples that would generate them.  
+Best case: O(n) when the input is already monotone (e.g., increasing [1,2,3,4,…] or even decreasing [9,8,7,…]). Timsort detects long, monotonic runs and either reuses or reverses them in linear time.  
+Average case: O(n log n) on typical, partially ordered or random inputs.  
+Worst case: O(n log n); highly fragmented run structures force near full merge behavior.
 <hr>
 
 ## References
@@ -158,6 +164,8 @@ Add your references here. A good reference includes an inline citation, such as 
 6. Wikipedia contributors. 2025. “Selection sort.” Wikipedia, The Free Encyclopedia. Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Selection_sort  
 7. Wikipedia contributors. 2025. “Insertion sort.” Wikipedia, The Free Encyclopedia. Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Insertion_sort
 8. Robert Sedgewick and Kevin Wayne. 2011. Algorithms (4th ed.). Addison-Wesley Professional, Boston, MA.
+9. Python Software Foundation. 2024. Sorting HOWTO — Python Docs. (accessed Sept. 29, 2025). https://docs.python.org/3/howto/sorting.html
+10. Wikipedia contributors. 2025. Timsort. Wikipedia, The Free Encyclopedia. (accessed Sept. 29, 2025). https://en.wikipedia.org/wiki/Timsort
 
 
 
