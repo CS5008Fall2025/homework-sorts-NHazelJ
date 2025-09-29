@@ -37,7 +37,7 @@ From both the table and the charts, the gap between the quadratic sorts widens q
 
 
 ### 3. Big O
-Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do.   
+Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. [1],[2],[3]  
 | Algorithm    | Best Case   | Average Case   | Worst Case|  
 | Bubble       | O(n)*       | O(n2)          | O(n2)     |  
 | Selection    | O(n2)       | O(n2)          | O(n2)    |  
@@ -100,9 +100,9 @@ Pair the following terms with the correct function in the table.
 
 ### 6. Stable vs Unstable
 Look up stability as it refers to sorting. In your own words, describe one sort that is stable and one sort that isn't stable  
-stable example — Insertion sort: In the usual array implementation, when we shift larger elements to the right and then insert the key, equal elements are not swapped past each other, easier to compute so making it more stable.
+stable example — Insertion sort: In the usual array implementation, when we shift larger elements to the right and then insert the key, equal elements are not swapped past each other, easier to compute so making it more stable.[4]
 
-Unstable example —selection sort repeatedly selects the minimum from the unsorted tail and swaps it with the first position of that tail. That swap can move an equal key from later in the array ahead of an equal key that appeared earlier. A bit harder to compute so making it less stable.
+Unstable example —selection sort repeatedly selects the minimum from the unsorted tail and swaps it with the first position of that tail. That swap can move an equal key from later in the array ahead of an equal key that appeared earlier. A bit harder to compute so making it less stable.[4]
 
 
 ### 6.2 When stability is needed?
@@ -111,25 +111,30 @@ It will be way faster and easier to implement as well. The computer won't strugg
 
 ### 7. Gold Thief
 
-You are planning a heist to steal a rare coin that weighs 1.0001 ounces. The problem is that the rare coin was mixed with a bunch of counter fit coins. You know the counter fit coins only weight 1.0000 ounce each. There are in total 250 coins.  You have a simple balance scale where the coins can be weighed against each other. Hint: don't think about all the coins at once, but how you can break it up into even(ish) piles. 
+You are planning a heist to steal a rare coin that weighs 1.0001 ounces. The problem is that the rare coin was mixed with a bunch of counter fit coins. You know the counter fit coins only weight 1.0000 ounce each. There are in total 250 coins.  You have a simple balance scale where the coins can be weighed against each other. Hint: don't think about all the coins at once, but how you can break it up into even(ish) piles.   
 
-
+If you have 250 and you split it so now you have a pile of 125 and 125 and you know they are all 1.0 ounce each so the pile that is 125.0001 instead of the 125.0000 will have the rare coin. so you basically cut your search in half and you can do it again  and again until find your rare coin. This reminds me of Binary search.
 
 #### 7.1 Algorithm
-Describe an algorithm that will help you find the coin. We encourage you to use pseudo-code, but not required.
+Describe an algorithm that will help you find the coin. We encourage you to use pseudo-code, but not required.  
+If you have 250 and you split it so now you have a pile of 125 and 125 and you know they are all 1.0 ounce each so the pile that is 125.0001 instead of the 125.0000 will have the rare coin. so you basically cut your search in half and you can do it again  and again until find your rare coin. This reminds me of Binary search. 
+The algorithm that we will use here will be a binary search algorithm, it will facilitate the search of the rare coin.
 
 #### 7.2 Time Complexity
 What is the average time complexity of your algorithm? 
-
+Binary search on a sorted array will have a average time complexity of $O(\log_2n)$ [4]
 
 ## Technical Interview Practice Questions
 
 For both these questions, are you are free to use what you did as the last section on the team activities/answered as a group, or you can use a different question.
 
 1. Select one technical interview question (this module or previous) from the [technical interview list](https://github.com/CS5008-khoury/Resources/blob/main/TechInterviewQuestions.md) below and answer it in a few sentences. You can use any resource you like to answer the question.
+What is Big O? How does it help us analyze algorithms?  
+Big-O notation describes an asymptotic upper bound on how a function—usually an algorithm’s running time or memory—grows with input size n. Formally, f(n) is in O(g(n)) if there exist constants c > 0 and n0 such that for all n ≥ n0, f(n) ≤ c * g(n). In practice, Big-O ignores constant factors and lower-order terms so we focus on the dominant growth rate, which lets us compare algorithms independent of machine or language details. It helps predict scalability (for example, an O(n log n) algorithm will eventually beat an O(n^2) algorithm as n grows), communicate behavior succinctly (e.g., linear search O(n) vs. binary search O(log n)), and guide design choices toward better-growing approaches. [4][8]
 
-2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others. 
- 
+2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.  
+27. 27. Remove Element  
+![27. Remove Element LeetCode Question](RemoveElement27LC.png)
 
 ## Deeper Thinking
 Sorting algorithms are still being studied today. They often include a statistical analysis of data before sorting. This next question will require some research, as it isn't included in class content. When you call `sort()` or `sorted()` in Python 3.6+, what sort is it using? 
@@ -145,9 +150,14 @@ Give the worst and best case time-complexity, and examples that would generate t
 ## References
 Add your references here. A good reference includes an inline citation, such as [1] , and then down in your references section, you include the full details of the reference. Use [ACM Reference format].
 
-1. Reference info, date, etc.
-2. ...
-
+1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. Introduction to Algorithms (3rd ed.). MIT Press — Insertion sort analysis.
+2. Sedgewick, R., & Wayne, K. Algorithms (4th ed.), Ch. 2.1–2.2 (Elementary sorts: bubble/selection/insertion).
+3. Wikipedia contributors. “Bubble sort”, “Selection sort”, “Insertion sort” — summaries of best/average/worst cases.
+4. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2009. Introduction to Algorithms (3rd ed.). MIT Press, Cambridge, MA.  
+5. Wikipedia contributors. 2025. “Bubble sort.” Wikipedia, The Free Encyclopedia  Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Bubble_sort  
+6. Wikipedia contributors. 2025. “Selection sort.” Wikipedia, The Free Encyclopedia. Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Selection_sort  
+7. Wikipedia contributors. 2025. “Insertion sort.” Wikipedia, The Free Encyclopedia. Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Insertion_sort
+8. Robert Sedgewick and Kevin Wayne. 2011. Algorithms (4th ed.). Addison-Wesley Professional, Boston, MA.
 
 
 
