@@ -5,13 +5,12 @@ Name: Najib Mosquera
 
 Github Account name:  https://github.com/NHazelJ
 
-Link to Assignment on Github: (copy and paste the link to your assignment repo here)
+Link to Assignment on Github: https://github.com/CS5008Fall2025/homework-sorts-NHazelJ/tree/main
 
-How many hours did it take you to complete this assignment (estimate)? 
+How many hours did it take you to complete this assignment (estimate)? 10 hours
 
 Did you collaborate with any other students/TAs/Professors? If so, tell us who and in what capacity.  
-- one per row, add more if needed
-
+- N/A
 
 Did you use any external resources (you do not have to cite in class material)? (Cite them below)  
 1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. Introduction to Algorithms (3rd ed.). MIT Press — Insertion sort analysis.
