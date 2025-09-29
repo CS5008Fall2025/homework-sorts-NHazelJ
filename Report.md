@@ -37,20 +37,28 @@ From both the table and the charts, the gap between the quadratic sorts widens q
 
 
 ### 3. Big O
-Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. 
-
+Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do.   
+| Algorithm    | Best Case   | Average Case   | Worst Case|  
+| Bubble       | O(n)*       | O(n2)          | O(n2)     |  
+| Selection    | O(n2)       | O(n2)          | O(n2)    |  
+| Insertion    | O(n)        | O(n2)          | O(n2)     |  
 
 #### 3.2 Worst Case
-Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts
-
+Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts  
+Bubble Sorts - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  
+Selection Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  
+Insertion Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] 
 
 #### 3.3 Best Case
-Provide example of arrays that generate _best_ case for Bubble, Selection, Insertion, Merge Sorts 
-
+Provide example of arrays that generate _best_ case for Bubble, Selection, Insertion, Merge Sorts   
+For all three - [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 #### 3.4 Memory Considerations
-Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation. 
-
+Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation.  
+Bubble O(1) average, worst O(1)    
+Selection O(1) average, worst O(1)  
+Insertion O(1) average, worst O(1)  
+Equal
 ### 4. Growth of Functions
 Give the following values, place them correctly into *six* categories. Use the bullets, and feel free to cut and paste the full LatexMath we used to generate them.  
 
@@ -65,12 +73,13 @@ $2^n$
 $100n$  
 $2^{(n-1)}$
 #### Categories
-* 
-*
-*
-*
-*
-*
+* Constant O(1): 100, 10000
+* Linear O(n): 3n, 100n 
+* Log linear O ($n\log_2n$)
+* Quadratic O($n^2$) , $5n^2+5n$
+* Exponential O ($2^n$),   $2^{(n-1)}$
+* Factorial O(n!): n!
+
 
 ### 5. Growth of Function Language
 
@@ -79,26 +88,32 @@ Pair the following terms with the correct function in the table.
 
 | Big $O$     |  Name  |
 | ------      | ------ |
-| $O(n^3)$    |  your answer here |
-| $O(1)$      |   |
-| $O(n)$      |   |
-| $O(\log_2n)$ |   |
-| $O(n^2)$    |   |
-| $O(n!)$     |   |
-| $O(2^n)$    |   |
+| $O(n^3)$    |  Cubic |
+| $O(1)$      | Constant  |
+| $O(n)$      |  Linear |
+| $O(\log_2n)$ |  Logarithmic |
+| $O(n^2)$    |  Quadratic |
+| $O(n!)$     |  Factorial |
+| $O(2^n)$    |  Exponential |
 
 
 
 ### 6. Stable vs Unstable
 Look up stability as it refers to sorting. In your own words, describe one sort that is stable and one sort that isn't stable  
+stable example — Insertion sort: In the usual array implementation, when we shift larger elements to the right and then insert the key, equal elements are not swapped past each other, easier to compute so making it more stable.
+
+Unstable example —selection sort repeatedly selects the minimum from the unsorted tail and swaps it with the first position of that tail. That swap can move an equal key from later in the array ahead of an equal key that appeared earlier. A bit harder to compute so making it less stable.
 
 
 ### 6.2 When stability is needed?
-Explain in your own words a case in which you will want a stable algorithm over an unstable. Include an example. 
+Explain in your own words a case in which you will want a stable algorithm over an unstable. Include an example.
+It will be way faster and easier to implement as well. The computer won't struggle that much making it more efficient in every aspect. 
 
 ### 7. Gold Thief
 
 You are planning a heist to steal a rare coin that weighs 1.0001 ounces. The problem is that the rare coin was mixed with a bunch of counter fit coins. You know the counter fit coins only weight 1.0000 ounce each. There are in total 250 coins.  You have a simple balance scale where the coins can be weighed against each other. Hint: don't think about all the coins at once, but how you can break it up into even(ish) piles. 
+
+
 
 #### 7.1 Algorithm
 Describe an algorithm that will help you find the coin. We encourage you to use pseudo-code, but not required.

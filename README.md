@@ -15,5 +15,10 @@ Did you collaborate with any other students/TAs/Professors? If so, tell us who a
 
 Did you use any external resources (you do not have to cite in class material)? (Cite them below)  
 - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. Introduction to Algorithms (3rd ed.). MIT Press — Insertion sort analysis.
-
+- Sedgewick, R., & Wayne, K. Algorithms (4th ed.), Ch. 2.1–2.2 (Elementary sorts: bubble/selection/insertion).
+- Wikipedia contributors. “Bubble sort”, “Selection sort”, “Insertion sort” — summaries of best/average/worst cases.
+- Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein. 2009. Introduction to Algorithms (3rd ed.). MIT Press, Cambridge, MA.  
+-Wikipedia contributors. 2025. “Bubble sort.” Wikipedia, The Free Encyclopedia  Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Bubble_sort  
+-Wikipedia contributors. 2025. “Selection sort.” Wikipedia, The Free Encyclopedia. Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Selection_sort  
+-Wikipedia contributors. 2025. “Insertion sort.” Wikipedia, The Free Encyclopedia. Retrieved September 28, 2025 from https://en.wikipedia.org/wiki/Insertion_sort
 
