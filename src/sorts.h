@@ -170,7 +170,49 @@ void merge(int arr[], int temp[], int l, int m, int r)
     if (l > m || m + 1 > r)
         return;
 
+    // size of left subarray
+    int n1 = m - l + 1;
+    // size of right subarray
+    int n2 = r - m; 
+    
+    int *L = temp;
+    int *R = temp + n1;
 
+    // copying the arrays over to temp arrays
+    for (int i = 0; i < n1; i++){
+        L[i] = arr[l + i];  
+    }
+    for (int j = 0; j < n2; j++){
+        R[j] = arr[m + 1 + j]; 
+    }
+
+    // start sorting
+    // ints for the while loop
+    int i = 0; int j = 0; int k = l;
+    // merging the two subarrays back into arr
+    while (i < n1 && j < n2){
+        if (L[i] <= R[j]){
+            arr[k] = L[i];
+            i++;
+        }
+        else{
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while(i < n1){
+        arr[k] = L[i];
+        i++;
+        k++;
+    }   
+    while(j < n2){
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+    // at this point the subarrays are merged back into arr in sorted order
 }
 
 // To be built during week 6 lab
@@ -184,7 +226,16 @@ void merge(int arr[], int temp[], int l, int m, int r)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void merge_sort(int arr[], int temp[], int l, int r)
 {
-   
+        if(l < r){
+            // split in half
+            int m = l + (r-l) /2;
+            // sort left half
+            merge_sort(arr, temp, l, m);
+            // sort right half
+            merge_sort(arr, temp, m + 1, r);
+            // merge the two sorted halves
+            merge(arr, temp, l, m, r);
+        }
 }
 
 // lab build, merge sort
