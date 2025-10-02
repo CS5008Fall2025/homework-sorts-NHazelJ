@@ -29,7 +29,7 @@ You are free to write a script to run the program and build your table (then cop
 ### 1. Build a line chart
 Build a line chart using your favorite program. Your X axis will be N increasing, and your Y access will be the numbers for each type of sort. This will create something similar to the graph in the instructions, though it won't be as smooth. Due to speed differences, you may need to break up the $O(\log n)$ and $O(n^2)$ into different charts.
 
-![Sorting Algorithms Bubble Selection and Insertion](SortAlgoAll5.png)
+![Sorting Algorithms Bubble Selection and Insertion](SortAlgoAll5.png)  
 ![Sorting Algorithms Bubble Selection and Insertion](SortAlgoAll5Log2Yaxis.png)
 
 
@@ -49,25 +49,25 @@ Build another table that presents the best, worst, and average case for Bubble, 
 | Quick        | O(nlogn)    | O(nlogn)       | O(n^2)     |
 
 #### 3.2 Worst Case
-Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts  
+Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts   
 Bubble Sorts - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  - n^2  
 Selection Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  - n^2  
 Insertion Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] - n^2  
-Merge Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] - nlogn  
+Merge Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] - nlogn    
 Quick Sort - [1, 2, 3, 4, 5, 6, 7, 8, 9] - when ends are chosen as pivot - n^2
 
 #### 3.3 Best Case
 Provide example of arrays that generate _best_ case for Bubble, Selection, Insertion, Merge Sorts   
-For the first 4 - [1, 2, 3, 4, 5, 6, 7, 8, 9]
-quick sort - [5, 2, 8, 1, 3, 7, 9, 4, 6] - if pivot is median then O(n log n).
+For the first 4 - [1, 2, 3, 4, 5, 6, 7, 8, 9]  
+Quick sort - [5, 2, 8, 1, 3, 7, 9, 4, 6] - if pivot is median then O(n log n)
 
 #### 3.4 Memory Considerations
 Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation.  
 Bubble - O(1) average, worst O(1)    
 Selection - O(1) average, worst O(1)  
 Insertion - O(1) average, worst O(1)  
-Merge Sort - O(n) extra space for temp subarrays during merging.
-Quick Sort - O(log n) average extra space recursion stack, O(n) worst case if the recursion is highly unbalanced.
+Merge Sort - O(n) extra space for temp subarrays during merging  
+Quick Sort - O(log n) average extra space recursion stack, O(n) worst case if the recursion is highly unbalanced
 ### 4. Growth of Functions
 Give the following values, place them correctly into *six* categories. Use the bullets, and feel free to cut and paste the full LatexMath we used to generate them.  
 
@@ -145,7 +145,7 @@ Big-O notation describes an asymptotic upper bound on how a function—usually a
 2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.  
 27. 27. Remove Element  
 ![27. Remove Element LeetCode Question](RemoveElement27LC.png)
-![125. Palindrome problem](Palindrome125LC.png)
+![125. Palindrome problem](Palindrome125LC.png)  
 ## Deeper Thinking
 Sorting algorithms are still being studied today. They often include a statistical analysis of data before sorting. This next question will require some research, as it isn't included in class content. When you call `sort()` or `sorted()` in Python 3.6+, what sort is it using?  
 Both list.sort() and sorted() use Timsort, a stable, adaptive hybrid of merge sort and insertion sort that exploits already-sorted “runs” in the data. The official Sorting HOWTO explicitly describes Python’s sort as Timsort and notes that it benefits from existing order.[9][10]
