@@ -23,3 +23,5 @@ Did you use any external resources (you do not have to cite in class material)? 
 8. Robert Sedgewick and Kevin Wayne. 2011. Algorithms (4th ed.). Addison-Wesley Professional, Boston, MA.
 9. Python Software Foundation. 2024. Sorting HOWTO — Python Docs. (accessed Sept. 29, 2025). https://docs.python.org/3/howto/sorting.html
 10. Wikipedia contributors. 2025. Timsort. Wikipedia, The Free Encyclopedia. (accessed Sept. 29, 2025). https://en.wikipedia.org/wiki/Timsort
+11. Weiss, M. A. Data Structures and Algorithm Analysis in C++ (4th ed.). Pearson -Merge sort analysis.
+12. Hoare, C. A. R. “Quicksort.” The Computer Journal, 5(1), 1962 — original paper on Quicksort.

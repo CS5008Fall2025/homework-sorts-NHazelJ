@@ -8,20 +8,20 @@ You are free to write a script to run the program and build your table (then cop
  
 
 ### Table [^note]
-| N      | Bubble   | Selection | Insertion | Merge (module 6) | Quick (module 6) |  
+| N      | Bubble   | Selection | Insertion | Merge | Quick |  
 | :----------: | :---------: | :------------: | :-------: | :-------: |:-------:|   
-| 10     | 0.000001 | 0.000001 | 0.000000 | :--: | :--: |  
-| 50     | 0.000011 | 0.000005 | 0.000002  | :--: | :--: |  
-| 100    | 0.000026 | 0.000016 | 0.000008 | :--: | :--: |  
-| 250    | 0.000145 | 0.000081 | 0.000046 | :--: | :--: |  
-| 500    | 0.000556 | 0.000304 | 0.000213 | :--: | :--: |  
-| 1000   | 0.002155 | 0.001209 | 0.000665 | :--: | :--: |  
-| 2000   | 0.008741 | 0.004563 | 0.002528 | :--: | :--: |  
-| 5000   | 0.063351 | 0.028247 | 0.016018 | :--: | :--: |  
-| 10000  | 0.283265 | 0.112168 | 0.063926 | :--: | :--: |  
-| 20000  | 1.259489 | 0.452660 | 0.304080 | :--: | :--: |  
-| 50000  | 8.588222 | 3.006050 | 1.613781 | :--: | :--: |  
-| 100000 | 34.361687 | 11.871099 | 7.134020 | :--: | :--: |  
+| 10     | 0.000001 | 0.000001 | 0.000000 | 0.000002 | 0.000003 |  
+| 50     | 0.000011 | 0.000005 | 0.000002  | 0.000005 | 0.000005 |  
+| 100    | 0.000026 | 0.000016 | 0.000008 | 0.000009 | 0.000009 |  
+| 250    | 0.000145 | 0.000081 | 0.000046 | 0.000029 | 0.000027 |  
+| 500    | 0.000556 | 0.000304 | 0.000213 | 0.000049 | 0.000037 |  
+| 1000   | 0.002155 | 0.001209 | 0.000665 | 0.000108 | 0.000078 |  
+| 2000   | 0.008741 | 0.004563 | 0.002528 | 0.000226 | 0.000164 |  
+| 5000   | 0.063351 | 0.028247 | 0.016018 | 0.000617  | 0.000438 |  
+| 10000  | 0.283265 | 0.112168 | 0.063926 | 0.001314 | 0.000935 |  
+| 20000  | 1.259489 | 0.452660 | 0.304080 | 0.002807 | 0.001965 |  
+| 50000  | 8.588222 | 3.006050 | 1.613781 | 0.007599 | 0.006002 |  
+| 100000 | 34.361687 | 11.871099 | 7.134020 | 0.016019 | 0.011100 |  
 
 
 ## BigO Analysis  / Questions
@@ -29,38 +29,45 @@ You are free to write a script to run the program and build your table (then cop
 ### 1. Build a line chart
 Build a line chart using your favorite program. Your X axis will be N increasing, and your Y access will be the numbers for each type of sort. This will create something similar to the graph in the instructions, though it won't be as smooth. Due to speed differences, you may need to break up the $O(\log n)$ and $O(n^2)$ into different charts.
 
-![Sorting Algorithms Bubble Selection and Insertion](SortingAlgorithms.png)
+![Sorting Algorithms Bubble Selection and Insertion](SortAlgoAll5.png)
+![Sorting Algorithms Bubble Selection and Insertion](SortAlgoAll5Log2Yaxis.png)
 
 
 ### 2. Analysis
 Looking at the graph and the table, what can you say about the various sorts? Which are the fastest? Which are the slowest? Which are the most consistent? Which are the least consistent? Use this space to reflect in your own words your observations.  
-From both the table and the charts, the gap between the quadratic sorts widens quickly as N grows. Insertion sort is the fastest of the three in my runs, which matches its lower constant factors and the fact it shifts rather than swaps a lot. Bubble sort is the slowest overall and scales the worst, as expected for a comparison heavy O(n²) method with many swaps. Selection sort lands in the middle: it does a fixed pattern of scans and one swap per outer pass, so it’s usually slower than insertion for large N but much better than bubble. In terms of consistency, selection sort is the most stable across input shapes (its work is almost the same whether the data is sorted or not). Insertion and bubble are the least consistent, they can be much faster on nearly sorted arrays (insertion is O(n) and bubble can exit early), but degrade to full O(n²) on harder inputs. Overall, the plots show insertion as the practical winner among these three for moderate sizes, with selection steady but slower, and bubble clearly falling behind as N increases.
+Now that we have added the last two sorts, merge and quick. we can see that quick is the fastest following but merge sort. After those two the rest follows.From both the table and the charts, the gap between the quadratic sorts widens quickly as N grows. Insertion sort is the fastest of the three in my runs, which matches its lower constant factors and the fact it shifts rather than swaps a lot. Bubble sort is the slowest overall and scales the worst, as expected for a comparison heavy O(n²) method with many swaps. Selection sort lands in the middle: it does a fixed pattern of scans and one swap per outer pass, so it’s usually slower than insertion for large N but much better than bubble. In terms of consistency, selection sort is the most stable across input shapes (its work is almost the same whether the data is sorted or not). Insertion and bubble are the least consistent, they can be much faster on nearly sorted arrays (insertion is O(n) and bubble can exit early), but degrade to full O(n²) on harder inputs. Overall, the plots show insertion as the practical winner among these three for moderate sizes, with selection steady but slower, and bubble clearly falling behind as N increases.
 
 
 ### 3. Big O
-Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. [1],[2],[3]  
+Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. [1],[2],[3],[11],[12] 
 | Algorithm    | Best Case   | Average Case   | Worst Case|   
 | :----------: | :---------: | :------------: | :-------: |  
 | Bubble       | O(n)*       | O(n2)          | O(n2)     |  
 | Selection    | O(n2)       | O(n2)          | O(n2)     |  
 | Insertion    | O(n)        | O(n2)          | O(n2)     |  
+| Merge        | O(nlogn)    | O(nlogn)       | O(nlogn)     |  
+| Quick        | O(nlogn)    | O(nlogn)       | O(n^2)     |
 
 #### 3.2 Worst Case
 Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts  
-Bubble Sorts - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  
-Selection Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  
-Insertion Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] 
+Bubble Sorts - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  - n^2  
+Selection Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  - n^2  
+Insertion Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] - n^2  
+Merge Sort - [10, 9, 8, 7, 6, 5, 4, 3, 2, 1] - nlogn  
+Quick Sort - [1, 2, 3, 4, 5, 6, 7, 8, 9] - when ends are chosen as pivot - n^2
 
 #### 3.3 Best Case
 Provide example of arrays that generate _best_ case for Bubble, Selection, Insertion, Merge Sorts   
-For all three - [1, 2, 3, 4, 5, 6, 7, 8, 9]
+For the first 4 - [1, 2, 3, 4, 5, 6, 7, 8, 9]
+quick sort - [5, 2, 8, 1, 3, 7, 9, 4, 6] - if pivot is median then O(n log n).
 
 #### 3.4 Memory Considerations
 Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation.  
-Bubble O(1) average, worst O(1)    
-Selection O(1) average, worst O(1)  
-Insertion O(1) average, worst O(1)  
-Equal
+Bubble - O(1) average, worst O(1)    
+Selection - O(1) average, worst O(1)  
+Insertion - O(1) average, worst O(1)  
+Merge Sort - O(n) extra space for temp subarrays during merging.
+Quick Sort - O(log n) average extra space recursion stack, O(n) worst case if the recursion is highly unbalanced.
 ### 4. Growth of Functions
 Give the following values, place them correctly into *six* categories. Use the bullets, and feel free to cut and paste the full LatexMath we used to generate them.  
 
@@ -108,7 +115,8 @@ Unstable example —selection sort repeatedly selects the minimum from the unsor
 
 
 ### 6.2 When stability is needed?
-Explain in your own words a case in which you will want a stable algorithm over an unstable. Include an example.
+Explain in your own words a case in which you will want a stable algorithm over an unstable. Include an example.  
+Choose a stable sort when you need to preserve the ordering of equal elements — especially when doing multi-level sorting.
 It will be way faster and easier to implement as well. The computer won't struggle that much making it more efficient in every aspect. 
 
 ### 7. Gold Thief
@@ -137,7 +145,7 @@ Big-O notation describes an asymptotic upper bound on how a function—usually a
 2. Select one coding question (this module or previous) from the [coding practice repository](https://github.com/CS5008-khoury/Resources/blob/main/LeetCodePractice.md) and include a c file with that code with your submission. Make sure to add comments on what you learned, and if you compared your solution with others.  
 27. 27. Remove Element  
 ![27. Remove Element LeetCode Question](RemoveElement27LC.png)
-
+![125. Palindrome problem](Palindrome125LC.png)
 ## Deeper Thinking
 Sorting algorithms are still being studied today. They often include a statistical analysis of data before sorting. This next question will require some research, as it isn't included in class content. When you call `sort()` or `sorted()` in Python 3.6+, what sort is it using?  
 Both list.sort() and sorted() use Timsort, a stable, adaptive hybrid of merge sort and insertion sort that exploits already-sorted “runs” in the data. The official Sorting HOWTO explicitly describes Python’s sort as Timsort and notes that it benefits from existing order.[9][10]
@@ -166,6 +174,8 @@ Add your references here. A good reference includes an inline citation, such as 
 8. Robert Sedgewick and Kevin Wayne. 2011. Algorithms (4th ed.). Addison-Wesley Professional, Boston, MA.
 9. Python Software Foundation. 2024. Sorting HOWTO — Python Docs. (accessed Sept. 29, 2025). https://docs.python.org/3/howto/sorting.html
 10. Wikipedia contributors. 2025. Timsort. Wikipedia, The Free Encyclopedia. (accessed Sept. 29, 2025). https://en.wikipedia.org/wiki/Timsort
+11. Weiss, M. A. Data Structures and Algorithm Analysis in C++ (4th ed.). Pearson -Merge sort analysis.
+12. Hoare, C. A. R. “Quicksort.” The Computer Journal, 5(1), 1962 — original paper on Quicksort.
 
 
 
